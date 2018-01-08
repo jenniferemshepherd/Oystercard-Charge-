@@ -47,4 +47,12 @@ describe Oystercard do
 
   end
 
+  describe '#touch_out' do
+
+    it 'sets journey status to false' do
+      expect{ card.touch_out }.to change{ card.in_journey }.to false
+    end
+
+  end
+
 end
