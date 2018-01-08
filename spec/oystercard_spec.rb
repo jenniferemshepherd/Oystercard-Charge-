@@ -20,4 +20,13 @@ describe Oystercard do
 
   end
 
+  describe '#deduct' do
+
+    it 'deducts amount from balance' do
+      card.topup(30)
+      expect{ card.deduct(2) }.to change{ card.balance }.by -2
+    end
+
+  end
+
 end
