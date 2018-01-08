@@ -4,6 +4,7 @@ class Oystercard
 
   INITIAL_BALANCE = 0.00
   BALANCE_LIMIT = 90.00
+  MINIMUM_FARE = 1.00
 
   def initialize
     @balance = INITIAL_BALANCE
@@ -25,6 +26,8 @@ class Oystercard
   end
 
   def touch_in
+    balance_error = "Balance is below the minimum fare of £#{Oystercard::MINIMUM_FARE}"
+    raise balance_error if @balance < 1
     @in_use = true
   end
 
