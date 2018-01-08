@@ -39,4 +39,12 @@ describe Oystercard do
 
   end
 
+  describe '#touch_in' do
+
+    it 'sets journey status to true' do
+      expect{ card.touch_in }.to change{ card.in_journey }.to true
+    end
+
+  end
+
 end
