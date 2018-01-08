@@ -1,11 +1,11 @@
 class Oystercard
 
-  attr_reader :balance, :in_journey
+  attr_reader :balance, :in_use
 
   INITIAL_BALANCE = 0.00
   BALANCE_LIMIT = 90.00
 
-  @in_journey = false
+  @in_use = false
 
   def initialize
     @balance = INITIAL_BALANCE
@@ -26,11 +26,11 @@ class Oystercard
   end
 
   def touch_in
-    @in_journey = true
+    @in_use = true
   end
 
   def touch_out
-    @in_journey = false
+    @in_use = false
   end
 
 end
