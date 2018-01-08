@@ -42,7 +42,8 @@ describe Oystercard do
   describe '#touch_in' do
 
     it 'sets journey status to true' do
-      expect{ card.touch_in }.to change{ card.in_use }.to true
+      card.touch_in
+      expect(card).to be_in_journey
     end
 
   end
@@ -50,7 +51,9 @@ describe Oystercard do
   describe '#touch_out' do
 
     it 'sets journey status to false' do
-      expect{ card.touch_out }.to change{ card.in_use }.to false
+      card.touch_in
+      card.touch_out
+      expect(card).not_to be_in_journey
     end
 
   end
