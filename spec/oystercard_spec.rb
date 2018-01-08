@@ -13,7 +13,7 @@ describe Oystercard do
       expect{ card.topup(10) }.to change{ card.balance }.by 10
     end
 
-    it 'raises an error when balance would be over the limit' do
+    it 'raises error when topup would exceed limit' do
       error = "This topup would exceed £#{Oystercard::BALANCE_LIMIT}"
       expect { card.topup(200) } .to raise_error error
     end
