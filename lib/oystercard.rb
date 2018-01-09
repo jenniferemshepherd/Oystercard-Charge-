@@ -23,7 +23,7 @@ class Oystercard
 
   def touch_in
     balance_error = "Balance is below the minimum fare of £#{Oystercard::MINIMUM_FARE}"
-    raise balance_error if @balance < 1
+    raise balance_error if @balance < MINIMUM_FARE
     @in_use = true
   end
 
